@@ -10,7 +10,7 @@ class LoginValidator {
     }
 
     fun isPasswordValid(password: String): Boolean {
-        return !TextUtils.isEmpty(password) && password.length > 6
+        return !TextUtils.isEmpty(password) && password.length >= 6
     }
 
 }

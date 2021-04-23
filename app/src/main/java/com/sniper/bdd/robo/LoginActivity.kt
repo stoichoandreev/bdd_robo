@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class LoginActivity : AppCompatActivity(), LoginPresenter.View {
 
-    private val presenter = LoginPresenter(this)
+    private val presenter = LoginPresenter(this, LoginValidator())
 
     private lateinit var password : EditText
     private lateinit var email : EditText

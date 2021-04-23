@@ -3,7 +3,7 @@ package com.sniper.bdd.robo
 
 class LoginPresenter(
     private val view: View,
-    private val validator: LoginValidator = LoginValidator()
+    private val validator: LoginValidator
 ) {
     interface View {
 
