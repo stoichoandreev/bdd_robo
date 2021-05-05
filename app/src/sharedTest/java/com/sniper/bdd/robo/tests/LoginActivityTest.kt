@@ -12,6 +12,7 @@ import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import com.sniper.bdd.robo.*
 import com.sniper.bdd.robo.dsl.*
 import com.sniper.bdd.robo.dsl.AND
@@ -19,9 +20,11 @@ import com.sniper.bdd.robo.dsl.GIVEN
 import com.sniper.bdd.robo.dsl.WHEN
 import org.hamcrest.CoreMatchers.not
 import org.robolectric.annotation.Config
+import org.robolectric.annotation.LooperMode
 
 @RunWith(AndroidJUnit4::class)//Be careful with the import here, do not import androidx.test.runner.AndroidJUnit4! You will need androidx.test.ext.junit.runners.AndroidJUnit4
 @Config(sdk = [24], application = MyTestApplication::class)
+@LooperMode(LooperMode.Mode.PAUSED)
 class LoginActivityTest {
 
     private val robot = Robot()
@@ -44,7 +47,7 @@ class LoginActivityTest {
             AND { enterPassword(DataFactory.INVALID_PASSWORD) }
             AND { clickSubmitLogin() }
             THEN { checkSuccessfulLoginNotDisplayed() }
-            THEN { checkSuccessfulLoginNotDisplayed() }
+            THEN { checkPasswordErrorDisplayed() }
         }
     }
 
@@ -89,6 +92,11 @@ class LoginActivityTest {
 
         fun checkSuccessfulLoginNotDisplayed() {
             Espresso.onView(ViewMatchers.withId(R.id.successful_login_text_view)).check(ViewAssertions.matches(not(ViewMatchers.isDisplayed())))
+        }
+
+        fun checkPasswordErrorDisplayed() {
+            val expectedErrorMessage: String = InstrumentationRegistry.getInstrumentation().targetContext.getString(R.string.error_invalid_password)
+            Espresso.onView(ViewMatchers.withId(R.id.password)).check(ViewAssertions.matches(ViewMatchers.hasErrorText(expectedErrorMessage)))
         }
 
     }
