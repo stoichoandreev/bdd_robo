@@ -6,7 +6,6 @@ import org.junit.Before
 import org.junit.After
 import org.junit.runner.RunWith
 import androidx.test.core.app.ActivityScenario
-import com.sniper.bdd.robo.data.DataFactory
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.action.ViewActions
@@ -14,13 +13,13 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.sniper.bdd.robo.*
-import com.sniper.bdd.robo.dsl.*
-import com.sniper.bdd.robo.dsl.AND
-import com.sniper.bdd.robo.dsl.GIVEN
-import com.sniper.bdd.robo.dsl.WHEN
 import org.hamcrest.CoreMatchers.not
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.LooperMode
+import com.sniper.bdd.robo.sharedtest.MyTestApplication
+import com.sniper.bdd.robo.sharedtest.BaseRobot
+import com.sniper.bdd.robo.sharedtest.data.DataFactory
+import com.sniper.bdd.robo.sharedtest.dsl.*
 
 @RunWith(AndroidJUnit4::class)//Be careful with the import here, do not import androidx.test.runner.AndroidJUnit4! You will need androidx.test.ext.junit.runners.AndroidJUnit4
 @Config(sdk = [24], application = MyTestApplication::class)

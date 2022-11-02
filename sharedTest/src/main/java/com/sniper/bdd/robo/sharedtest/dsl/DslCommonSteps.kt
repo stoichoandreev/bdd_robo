@@ -1,6 +1,6 @@
-package com.sniper.bdd.robo.dsl
+package com.sniper.bdd.robo.sharedtest.dsl
 
-import com.sniper.bdd.robo.BaseRobot
+import com.sniper.bdd.robo.sharedtest.BaseRobot
 
 
 /**
@@ -8,7 +8,7 @@ import com.sniper.bdd.robo.BaseRobot
  * @param block - the block of code which needs to be executed in the GIVEN step
  * @return - robot instance of the test robot, it allows us to call robot methods directly
  */
-fun <T: BaseRobot>TestRun<T>.GIVEN(
+fun <T: BaseRobot> TestRun<T>.GIVEN(
     block: T.() -> Unit
 ): T {
     //you can print something here
@@ -20,7 +20,7 @@ fun <T: BaseRobot>TestRun<T>.GIVEN(
  * @param block - the block of code which needs to be executed in the WHEN step
  * @return - robot instance of the unit test, it allows us to call robot methods directly
  */
-fun <T: BaseRobot>TestRun<T>.WHEN(
+fun <T: BaseRobot> TestRun<T>.WHEN(
     block: T.() -> Unit
 ): T {
     //you can print something here too
@@ -32,7 +32,7 @@ fun <T: BaseRobot>TestRun<T>.WHEN(
  * @param block - the block of code which needs to be executed in the AND step
  * @return - robot instance of the unit test, it allows us to call robot methods directly
  */
-fun <T: BaseRobot>TestRun<T>.AND(
+fun <T: BaseRobot> TestRun<T>.AND(
     block: T.() -> Unit
 ): T {
     //you can print something here too
@@ -44,7 +44,7 @@ fun <T: BaseRobot>TestRun<T>.AND(
  * @param block - the block of code which needs to be executed in the THEN step
  * @return - robot instance of the unit test, it allows us to call robot methods directly
  */
-fun <T: BaseRobot>TestRun<T>.THEN(
+fun <T: BaseRobot> TestRun<T>.THEN(
     block: T.() -> Unit
 ): T {
     //you can print something here too

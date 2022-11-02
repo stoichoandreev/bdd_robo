@@ -2,7 +2,7 @@ package com.sniper.bdd.robo.nostyle
 
 import com.sniper.bdd.robo.LoginPresenter
 import com.sniper.bdd.robo.LoginValidator
-import com.sniper.bdd.robo.data.DataFactory
+import com.sniper.bdd.robo.sharedtest.data.DataFactory
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
@@ -27,7 +27,7 @@ class LoginPresenterTest {
     }
 
     @Test
-    fun `shouldClearErrorsOnLogin`() {
+    fun `should Clear Errors On Login`() {
         //when
         tested.onLoginSubmit(DataFactory.EMAIL, DataFactory.VALID_PASSWORD)
         //then
@@ -35,7 +35,7 @@ class LoginPresenterTest {
     }
 
     @Test
-    fun `shouldDisplaySuccessfulLogin`() {
+    fun `should Display Successful Login`() {
         //given
         every { validator.isEmailValid(any()) }.returns(true)
         every { validator.isPasswordValid(any()) }.returns(true)
