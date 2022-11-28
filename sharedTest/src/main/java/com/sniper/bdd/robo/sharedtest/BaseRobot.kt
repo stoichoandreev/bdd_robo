@@ -1,4 +1,4 @@
-package com.sniper.bdd.robo
+package com.sniper.bdd.robo.sharedtest
 
 
 /**

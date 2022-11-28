@@ -1,4 +1,6 @@
-package com.sniper.bdd.robo
+package com.sniper.bdd.robo.sharedtest
+
+import com.sniper.bdd.robo.MyApplication
 
 
 class MyTestApplication: MyApplication() {

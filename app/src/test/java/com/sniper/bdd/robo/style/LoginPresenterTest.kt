@@ -1,13 +1,13 @@
 package com.sniper.bdd.robo.style
 
-import com.sniper.bdd.robo.BaseRobot
 import com.sniper.bdd.robo.LoginPresenter
 import com.sniper.bdd.robo.LoginValidator
-import com.sniper.bdd.robo.data.DataFactory
-import com.sniper.bdd.robo.dsl.GIVEN
-import com.sniper.bdd.robo.dsl.RUN_UNIT_TEST
-import com.sniper.bdd.robo.dsl.THEN
-import com.sniper.bdd.robo.dsl.WHEN
+import com.sniper.bdd.robo.sharedtest.BaseRobot
+import com.sniper.bdd.robo.sharedtest.data.DataFactory
+import com.sniper.bdd.robo.sharedtest.dsl.GIVEN
+import com.sniper.bdd.robo.sharedtest.dsl.RUN_UNIT_TEST
+import com.sniper.bdd.robo.sharedtest.dsl.THEN
+import com.sniper.bdd.robo.sharedtest.dsl.WHEN
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
@@ -26,7 +26,7 @@ class LoginPresenterTest {
     }
 
     @Test
-    fun `shouldClearErrorsOnLogin`() {
+    fun `should Clear Errors On Login`() {
         RUN_UNIT_TEST(robot) {
             WHEN { loginSubmit() }
             THEN { checkViewClearErrors() }
@@ -34,7 +34,7 @@ class LoginPresenterTest {
     }
 
     @Test
-    fun `shouldDisplaySuccessfulLogin`() {
+    fun `should Display Successful Login`() {
         RUN_UNIT_TEST(robot) {
             GIVEN { stubValidEmail() }
             GIVEN { stubValidPassword() }

@@ -1,4 +1,4 @@
-package com.sniper.bdd.robo.data
+package com.sniper.bdd.robo.sharedtest.data
 
 object DataFactory {
 

@@ -1,10 +1,10 @@
-package com.sniper.bdd.robo.runner
+package com.sniper.bdd.robo.sharedtest.runner
 
 import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import androidx.test.runner.AndroidJUnitRunner
-import com.sniper.bdd.robo.MyTestApplication
+import com.sniper.bdd.robo.sharedtest.MyTestApplication
 
 
 class MyInstrumentationTestRunner : AndroidJUnitRunner() {
